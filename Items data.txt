@@ -1,0 +1,33 @@
+INSERT INTO Items (name,description,smallunit,bigunit,AmountPerSmall,SmallPerBig) VALUES
+('Burger Bun's,'Bun',Crate,,1,30)
+('Chedar Cheese','Block',Crate,,1,25)
+('Blue Cheese','Used for the Burger Blueston','Block','Crate',NULL,1,20)
+('Beef Burger','4oz','Burger','Crate',NULL,1,50),
+('Chicken Burger','4oz','Burger','Crate',NULL,1,50),
+('Veggies Burger','4oz','Burger','Crate',NULL,1,50),
+('Halal Beef Burger','4oz','Burger','Crate',NULL,1,40),
+('Halal Chicken Burger','4oz','Burger','Crate',NULL,1,40),
+('Bacon',NULL,'Packet','Crate',NULL,10,40),
+('Ketchup',NULL,'Bottle','Crate','1L',15),
+('Burger Sauce',NULL,'Bottle','Crate','1L',15),		
+('Mayonnaise',NULL,'Bottle','Crate','1L',15),
+('Garlic Mayo',NULL,'Bottle','Crate','1L',15),
+('Lettuce',NULL,'Head','Crate','1',10),
+('Onions','White Onions','Bag','Crate','8',15),
+('Tomatos',NULL,'Packet','Crate','5',20),
+('Cucumber',NULL,'Stick','Crate','1',20),
+('Pickled Gerkins','Unsweetened in Vinigar','Jar','Crate','10',24),
+('Chips','Frying Chips','Bag',0,'100',NULL),
+('Burger Boxes Small','Boxes Used to Serve Food','Box','Crate','1',200),
+('Burger Boxes Large','Boxes Used to Serve Food','Box','Crate','1',150),
+('Coke',NULL,'Can','Crate','300ml',50),
+('Diet Coke',NULL,'Can','Crate','300ml',50),
+('Coke Zero',NULL,'Can','Crate','300ml',50),
+('Rio',NULL,'Can','Crate','300ml',50),
+('Fanta Orange',NULL,'Can','Crate','300ml',50),
+('Fanta Fruit Twist',NULL,'Can','Crate','300ml',50),
+('7up Lemonade',NULL,'Can','Crate','300ml',50),
+('Cumberland Sausage','Spiral Sausage','Sausage','Bag','1',30),
+('Pepperoni Slices',NULL,'Packet','Crate','20',40),
+('Napkins',NULL,'Packet','Crate','200',100),
+('Forks',NULL,'Packet','Crate','150',300);
