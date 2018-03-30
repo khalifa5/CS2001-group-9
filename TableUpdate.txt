@@ -1,0 +1,95 @@
+
+Database changed
+mysql> show tables;
++----------------------------+
+| Tables_in_Stock_Control_DB |
++----------------------------+
+| Invoices                   |
+| Items                      |
+| StockCount                 |
+| Users                      |
+| Variance                   |
+| Wastage                    |
++----------------------------+
+6 rows in set (0.00 sec)
+
+mysql> describe Invoices;
++-----------+-----------------+------+-----+---------+-------+
+| Field     | Type            | Null | Key | Default | Extra |
++-----------+-----------------+------+-----+---------+-------+
+| InvoiceID | int(6)          | NO   | PRI | NULL    |       |
+| ItemID    | int(6) unsigned | NO   | PRI | NULL    |       |
+| amount    | int(6)          | NO   |     | NULL    |       |
+| unit      | tinyint(1)      | NO   |     | NULL    |       |
+| date      | datetime        | NO   |     | NULL    |       |
++-----------+-----------------+------+-----+---------+-------+
+5 rows in set (0.00 sec)
+
+mysql> describe Items;
++----------------+-----------------+------+-----+---------+----------------+
+| Field          | Type            | Null | Key | Default | Extra          |
++----------------+-----------------+------+-----+---------+----------------+
+| ItemID         | int(6) unsigned | NO   | PRI | NULL    | auto_increment |
+| name           | varchar(30)     | NO   | UNI | NULL    |                |
+| description    | varchar(40)     | YES  |     | NULL    |                |
+| smallunit      | varchar(20)     | NO   |     | NULL    |                |
+| bigunit        | varchar(20)     | NO   |     | NULL    |                |
+| price          | decimal(13,2)   | YES  |     | NULL    |                |
+| AmountPerSmall | varchar(30)     | YES  |     | NULL    |                |
+| SmallPerBig    | int(6)          | YES  |     | NULL    |                |
++----------------+-----------------+------+-----+---------+----------------+
+8 rows in set (0.00 sec)
+
+mysql> describe StockCount;
++---------+-----------------+------+-----+---------+----------------+
+| Field   | Type            | Null | Key | Default | Extra          |
++---------+-----------------+------+-----+---------+----------------+
+| StockID | int(6) unsigned | NO   | PRI | NULL    | auto_increment |
+| ItemID  | int(6) unsigned | NO   | PRI | NULL    |                |
+| amount  | int(6)          | NO   |     | NULL    |                |
+| unit    | tinyint(1)      | NO   |     | NULL    |                |
+| date    | datetime        | NO   |     | NULL    |                |
++---------+-----------------+------+-----+---------+----------------+
+5 rows in set (0.00 sec)
+----------------------------Foreword---------------------------------------------------------------===---------------
+After randomising the data I had to change some of the fields of the database like the addition of the 'theoretical'
+to store the theoretical value and variance percan to the table variance and VarPer which will store the value of the 
+variance percentage
+Here are the tables:
+---------------------------------------------------------------------------------------------------------------------
+
+mysql> use Users;
+ERROR 1044 (42000): Access denied for user 'Edward'@'localhost' to database 'Use                                                                                   rs'
+mysql> describe Users;
++----------+-------------+------+-----+---------+-------+
+| Field    | Type        | Null | Key | Default | Extra |
++----------+-------------+------+-----+---------+-------+
+| login    | varchar(30) | NO   | PRI | NULL    |       |
+| password | varchar(20) | NO   | PRI | NULL    |       |
++----------+-------------+------+-----+---------+-------+
+2 rows in set (0.00 sec)
+
+mysql> describe Variance;
++-------------+-----------------+------+-----+---------+-------+
+| Field       | Type            | Null | Key | Default | Extra |
++-------------+-----------------+------+-----+---------+-------+
+| ItemID      | int(6) unsigned | NO   | PRI | NULL    |       |
+| date        | datetime        | NO   | PRI | NULL    |       |
+| theoretical | int(6)          | YES  |     | NULL    |       |
+| variance    | int(6)          | NO   |     | NULL    |       |
+| VarPer      | int(3)          | YES  |     | NULL    |       |
++-------------+-----------------+------+-----+---------+-------+
+5 rows in set (0.00 sec)
+
+mysql> describe Wastage;
++-----------+-----------------+------+-----+---------+----------------+
+| Field     | Type            | Null | Key | Default | Extra          |
++-----------+-----------------+------+-----+---------+----------------+
+| WastageID | int(6) unsigned | NO   | PRI | NULL    | auto_increment |
+| ItemID    | int(6) unsigned | NO   |     | NULL    |                |
+| amount    | int(6)          | NO   |     | NULL    |                |
+| date      | datetime        | NO   |     | NULL    |                |
++-----------+-----------------+------+-----+---------+----------------+
+4 rows in set (0.00 sec)
+
+mysql>
